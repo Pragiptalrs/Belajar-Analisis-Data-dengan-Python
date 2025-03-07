@@ -27,8 +27,8 @@ def clustering_kategori(df):
     df['Kategori'] = df['cnt'].apply(categorize_demand)
     return df
 
-day_df = pd.read_csv(os.path.join("data", "day_data.csv"))
-hour_df = pd.read_csv(os.path.join("data", "hour_data.csv"))
+day_df = pd.read_csv("day_data.csv")
+hour_df = pd.read_csv("hour_data.csv")
 
 st.set_page_config(layout="wide")
 st.header('Bike Sharing Dashboard 🚴‍♂️')
