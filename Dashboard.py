@@ -34,7 +34,7 @@ st.set_page_config(layout="wide")
 st.header('Bike Sharing Dashboard 🚴‍♂️')
 
 with st.sidebar:
-    st.image("D:/KULIAH/SEMESTER 6/DBS/Dashboard/Gambar Sepeda.png")
+    st.image("Gambar Sepeda.png")
 
     start_date, end_date = st.date_input(
         label="Rentang Waktu",
