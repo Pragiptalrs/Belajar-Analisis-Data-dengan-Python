@@ -3,6 +3,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 import streamlit as st
+import os
 sns.set(style='dark')
 
 def load_data():
@@ -26,8 +27,8 @@ def clustering_kategori(df):
     df['Kategori'] = df['cnt'].apply(categorize_demand)
     return df
 
-day_df = pd.read_csv("D:/KULIAH/SEMESTER 6/DBS/Dashboard/day_data.csv")
-hour_df = pd.read_csv("D:/KULIAH/SEMESTER 6/DBS/Dashboard/hour_data.csv")
+day_df = pd.read_csv(os.path.join("data", "day_data.csv"))
+hour_df = pd.read_csv(os.path.join("data", "hour_data.csv"))
 
 st.set_page_config(layout="wide")
 st.header('Bike Sharing Dashboard 🚴‍♂️')
