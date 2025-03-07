@@ -11,6 +11,7 @@ sns.set(style='dark')
 def load_data():
     if os.path.exists("day_data.csv") and os.path.exists("hour_data.csv"):
         day_df = pd.read_csv("day_data.csv")
+        hour_df = pd.read_csv("hour_data.csv")
     
     day_df['dteday'] = pd.to_datetime(day_df['dteday'])
     hour_df['dteday'] = pd.to_datetime(hour_df['dteday'])
