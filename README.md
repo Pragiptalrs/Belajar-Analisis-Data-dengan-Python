@@ -1,4 +1,4 @@
-# Analisis Bike Sharing Dataset (2011-2012)
+# Analisis Bike Sharing Dataset 
 
 ## Ringkasan Analisis
 Dataset ini berisi data penyewaan sepeda selama 2011-2012. Analisis menunjukkan bahwa:
