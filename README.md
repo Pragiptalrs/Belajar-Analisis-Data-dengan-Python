@@ -1,6 +1,6 @@
-#Analisis Bike Sharing Dataset 
+Analisis Bike Sharing Dataset 
 
-#Ringkasan Analisis
+Ringkasan Analisis
 Dataset ini berisi data penyewaan sepeda tahun 2011-2012. Analisis menunjukkan bahwa:
 - Peminjaman tertinggi terjadi pada musim gugur dan saat cuaca cerah.
 - Pola harian menunjukkan lonjakan penyewaan pada jam 08.00 dan 17.00.
@@ -11,7 +11,7 @@ Kesimpulan:
 - Fokus promosi pada jam sibuk dan musim dengan peminjaman rendah.
 - Menarik lebih banyak pelanggan dengan promo khusus akhir pekan.
 
-#Dashboard Bike Sharing
+Dashboard Bike Sharing
 Cara Menjalankan Dashboard
 
 1. Instalasi Dependensi (Shell/Terminal)
