@@ -7,13 +7,13 @@ import os
 sns.set(style='dark')
 
 def load_data():
-    day_df = pd.read_csv("day.csv")
-    hour_df = pd.read_csv("hour.csv")
-    
-    day_df['dteday'] = pd.to_datetime(day_df['dteday'])
-    hour_df['dteday'] = pd.to_datetime(hour_df['dteday'])
-    
-    return day_df, hour_df
+    if os.path.exists("day_data.csv") and os.path.exists("hour_data.csv"):
+        day_df = pd.read_csv("day_data.csv")
+        hour_df = pd.read_csv("hour_data.csv")
+        
+        day_df['dteday'] = pd.to_datetime(day_df['dteday'])
+        hour_df['dteday'] = pd.to_datetime(hour_df['dteday'])
+        return day_df, hour_df
 
 def categorize_demand(cnt):
     if cnt < 3000:
