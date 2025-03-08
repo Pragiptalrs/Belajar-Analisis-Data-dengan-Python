@@ -3,15 +3,11 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 import streamlit as st
-import os
-from datetime import datetime
-
 sns.set(style='dark')
 
 def load_data():
-    if os.path.exists("day_data.csv") and os.path.exists("hour_data.csv"):
-        day_df = pd.read_csv("day_data.csv")
-        hour_df = pd.read_csv("hour_data.csv")
+    day_df = pd.read_csv("day.csv")
+    hour_df = pd.read_csv("hour.csv")
     
     day_df['dteday'] = pd.to_datetime(day_df['dteday'])
     hour_df['dteday'] = pd.to_datetime(hour_df['dteday'])
@@ -30,25 +26,24 @@ def clustering_kategori(df):
     df['Kategori'] = df['cnt'].apply(categorize_demand)
     return df
 
-day_df, hour_df = load_data()
-if day_df is None or hour_df is None:
-    st.stop()
+day_df = pd.read_csv("D:/Submission Proyek Analisis Data/dashboard/day_data.csv")
+hour_df = pd.read_csv("D:/Submission Proyek Analisis Data/dashboard/hour_data.csv")
 
 st.set_page_config(layout="wide")
 st.header('Bike Sharing Dashboard 🚴‍♂️')
 
 with st.sidebar:
-    if os.path.exists("Gambar Sepeda.png"):
-        st.image("Gambar Sepeda.png")
+    st.image("D:/Submission Proyek Analisis Data/dashboard/Gambar Sepeda.png")
 
-    min_date = day_df["dteday"].min().date()
-    max_date = day_df["dteday"].max().date()
     start_date, end_date = st.date_input(
         label="Rentang Waktu",
-        min_value=min_date,
-        max_value=max_date,
-        value=[min_date, max_date]
+        min_value=day_df["dteday"].min(),
+        max_value=day_df["dteday"].max(),
+        value=[day_df["dteday"].min(), day_df["dteday"].max()]
     )
+
+day_df["dteday"] = pd.to_datetime(day_df["dteday"])
+hour_df["dteday"] = pd.to_datetime(hour_df["dteday"])
 
 start_date = pd.to_datetime(start_date)
 end_date = pd.to_datetime(end_date)
