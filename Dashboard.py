@@ -37,9 +37,12 @@ with st.sidebar:
 
 start_date, end_date = st.date_input(
     label="Rentang Waktu",
-    min_value=day_df["dteday"].min().date(),  # Konversi ke datetime.date
-    max_value=day_df["dteday"].max().date(),
-    value=[day_df["dteday"].min().date(), day_df["dteday"].max().date()]
+    min_value=day_df["dteday"].min().to_pydatetime().date(),  
+    max_value=day_df["dteday"].max().to_pydatetime().date(),
+    value=[
+        day_df["dteday"].min().to_pydatetime().date(),
+        day_df["dteday"].max().to_pydatetime().date()
+    ]
 )
 
 day_df["dteday"] = pd.to_datetime(day_df["dteday"])
