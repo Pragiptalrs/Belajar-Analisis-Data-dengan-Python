@@ -35,12 +35,12 @@ st.header('Bike Sharing Dashboard 🚴‍♂️')
 with st.sidebar:
     st.image("https://raw.githubusercontent.com/Pragiptalrs/Belajar-Analisis-Data-dengan-Python/main/Gambar%20Sepeda.png")
 
-    start_date, end_date = st.date_input(
-        label="Rentang Waktu",
-        min_value=day_df["dteday"].min(),
-        max_value=day_df["dteday"].max(),
-        value=[day_df["dteday"].min(), day_df["dteday"].max()]
-    )
+start_date, end_date = st.date_input(
+    label="Rentang Waktu",
+    min_value=day_df["dteday"].min().date(),  # Konversi ke datetime.date
+    max_value=day_df["dteday"].max().date(),
+    value=[day_df["dteday"].min().date(), day_df["dteday"].max().date()]
+)
 
 day_df["dteday"] = pd.to_datetime(day_df["dteday"])
 hour_df["dteday"] = pd.to_datetime(hour_df["dteday"])
