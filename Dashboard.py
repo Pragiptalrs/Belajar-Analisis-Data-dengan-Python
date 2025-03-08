@@ -26,14 +26,14 @@ def clustering_kategori(df):
     df['Kategori'] = df['cnt'].apply(categorize_demand)
     return df
 
-day_df = pd.read_csv("D:/Submission Proyek Analisis Data/dashboard/day_data.csv")
-hour_df = pd.read_csv("D:/Submission Proyek Analisis Data/dashboard/hour_data.csv")
+day_df = pd.read_csv("https://github.com/Pragiptalrs/Belajar-Analisis-Data-dengan-Python/blob/main/day_data.csv")
+hour_df = pd.read_csv("https://github.com/Pragiptalrs/Belajar-Analisis-Data-dengan-Python/blob/main/hour_data.csv")
 
 st.set_page_config(layout="wide")
 st.header('Bike Sharing Dashboard 🚴‍♂️')
 
 with st.sidebar:
-    st.image("D:/Submission Proyek Analisis Data/dashboard/Gambar Sepeda.png")
+    st.image("https://github.com/Pragiptalrs/Belajar-Analisis-Data-dengan-Python/blob/main/Gambar%20Sepeda.png")
 
     start_date, end_date = st.date_input(
         label="Rentang Waktu",
