@@ -33,7 +33,7 @@ st.set_page_config(layout="wide")
 st.header('Bike Sharing Dashboard 🚴‍♂️')
 
 with st.sidebar:
-    st.image("https://github.com/Pragiptalrs/Belajar-Analisis-Data-dengan-Python/blob/main/Gambar%20Sepeda.png")
+    st.image("https://raw.githubusercontent.com/Pragiptalrs/Belajar-Analisis-Data-dengan-Python/main/Gambar%20Sepeda.png")
 
     start_date, end_date = st.date_input(
         label="Rentang Waktu",
